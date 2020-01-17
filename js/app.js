@@ -10,7 +10,7 @@ function init() {
 function filterUser(letters) {
     fetch(api)
         .then(response => response.json())
-        .then(data => tableAdd(data.filter(t => t.Nom.toLowerCase().includes(letters))));
+        .then(data => tableAdd(data.filter(item => item.Nom.toLowerCase().includes(letters))));
 }
 
 function tableAdd(items) {
