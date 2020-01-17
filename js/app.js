@@ -1,4 +1,5 @@
-const api = "http://url_to_your_datas_in.json"; // change me
+// change the url api
+const api = "http://wesley974.github.io/phonebook/datas/datas.json";
 
 function init() {
     fetch(api)
