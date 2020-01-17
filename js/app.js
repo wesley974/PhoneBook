@@ -39,7 +39,7 @@ const user = document.querySelector("#filter");
 form.addEventListener("submit", event => {
   	event.preventDefault();
     cleanTable();
-  	filterUser(user.value);
+  	filterUser(user.value.toLowerCase());
     user.value = "";
     user.focus();
 });
