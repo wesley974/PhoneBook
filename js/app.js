@@ -10,7 +10,7 @@ function init() {
 function filterUser(letters) {
     fetch(api)
         .then(response => response.json())
-        .then(data => tableAdd(data.filter(item => item.Nom.toLowerCase().includes(letters))));
+        .then(data => tableAdd(data.filter(item => item.Name.toLowerCase().includes(letters))));
 }
 
 function layoutPhone(n){
@@ -47,7 +47,7 @@ function tableAdd(items) {
 	items.sort(sortAlphabetically("-Name")).forEach(item => {
         tbody.insertAdjacentHTML("afterbegin", `
           <tr>
-            <td>${item.Nom}</td>
+            <td>${item.Name}</td>
             <td>${layoutPhone(item.Telephone)}</td>
             <td>${layoutPhone(item.Mobile)}</td>
             <td>${item.Email}</td>
