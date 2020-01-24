@@ -64,5 +64,17 @@
     "Telephone": 23032,
     "Mobile": 771063666,
     "Email": "test@toto.local"
+  },
+  {
+    "Name": "Eric Ijk",
+    "Telephone": 23033,
+    "Mobile": 661063666,
+    "Email": "eric@ijk.local"
+  },
+  {
+    "Name": "Benoit Lmn",
+    "Telephone": 23034,
+    "Mobile": 881063666,
+    "Email": "benoit@lmn.local"
   }
 ]
