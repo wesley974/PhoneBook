@@ -50,7 +50,7 @@ function tableAdd(items) {
             <td>${item.Name}</td>
             <td>${layoutPhone(item.Telephone)}</td>
             <td>${layoutPhone(item.Mobile)}</td>
-            <td>${item.Email}</td>
+            <td><a href="mailto:${item.Email}">${item.Email}</a></td>
           </tr>
         `);
 	 });
