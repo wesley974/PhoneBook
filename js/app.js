@@ -63,14 +63,10 @@ function cleanTable() {
 
 init();
 
-const form = document.querySelector("form");
 const user = document.querySelector("#filter");
-form.addEventListener("submit", event => {
-  	event.preventDefault();
+form.addEventListener("keyup", event => {
     cleanTable();
-  	filterUser(user.value.toLowerCase());
-    user.value = "";
-    user.focus();
+    filterUser(user.value.toLowerCase());
 });
 
 user.focus();
