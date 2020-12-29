@@ -1,19 +1,16 @@
 // change the url api
 const api = "https://wesley974.github.io/phonebook/datas/datas.json";
 
-function init() {
-    fetch(api)
-        .then(response => response.json())
-        .then(data => tableAdd(data));
+const init = async () => {
+    const response = await fetch(api);
+    return await response.json()
 }
 
-function filterUser(letters) {
-    fetch(api)
-        .then(response => response.json())
-        .then(data => tableAdd(data.filter(item => item.Name.toLowerCase().includes(letters))));
+const filterUser = (letters) => {
+    init().then (data => tableAdd(data.filter(t => t.Nom.toLowerCase().includes(letters))));
 }
 
-function layoutPhone(n){
+const layoutPhone = (n) => {
   if (n.toString().length === 9) {
     const A = n.toString().slice(0,3);
     const B = n.toString().slice(3,5);
@@ -25,7 +22,7 @@ function layoutPhone(n){
   }
 }
 
-function sortAlphabetically(property) {
+const sortAlphabetically = (property) => {
     let sortOrder = 1;
 
     if(property[0] === "-") {
@@ -42,7 +39,7 @@ function sortAlphabetically(property) {
     }
 }
 
-function tableAdd(items) {
+const tableAdd = (items) => {
 	tbody = document.querySelector("tbody");
 	items.sort(sortAlphabetically("-Name")).forEach(item => {
         tbody.insertAdjacentHTML("afterbegin", `
@@ -56,14 +53,19 @@ function tableAdd(items) {
 	 });
 }
 
-function cleanTable() {
+const cleanTable = () => {
 	tbody = document.querySelector("tbody");
 	tbody.innerHTML = '';
 }
 
-init();
+init().then(data => tableAdd(data));
 
 const user = document.querySelector("#filter");
+
+user.addEventListener("search", event => {
+    init().then(data => tableAdd(data));
+});
+
 user.addEventListener("keyup", event => {
     cleanTable();
     filterUser(user.value.toLowerCase());
