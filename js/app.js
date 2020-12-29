@@ -7,7 +7,7 @@ const init = async () => {
 }
 
 const filterUser = (letters) => {
-    init().then (data => tableAdd(data.filter(t => t.Nom.toLowerCase().includes(letters))));
+    init().then (data => tableAdd(data.filter(t => t.Name.toLowerCase().includes(letters))));
 }
 
 const layoutPhone = (n) => {
