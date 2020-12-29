@@ -12,14 +12,15 @@ header {
 }
 
 #filter {
-        border: 0;
-        min-width: 200px;
-        padding: 15px 20px;
-        font-size: 16px;
-        min-height: 50px;
-        border-radius: 3px;
-        box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-	outline: 1px solid powderblue;
+  border: 1px solid powderblue;
+  outline: 1px solid powderblue;
+  font-size: 16px;
+  padding: 15px 20px;
+  border-radius: 2px;
+  min-width: 250px;
+  transition: opacity 200ms ease-out;
+  -webkit-appearance: textfield;
+  appearance: textfield;
 }
 
 h1 {
